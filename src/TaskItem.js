@@ -1,10 +1,9 @@
-//import React from 'react';
 
-function TaskItem() {
+function TaskItem(props) {
   return(
     <li>
       <span>V</span>
-      <p>Tarea 1</p>
+      <p>{ props.text }</p>
       <span>X</span>
     </li>
   );

@@ -7,20 +7,31 @@ import { TaskButton } from './TaskButton';
 
 import './App.css';
 
+const arrayTask = [
+  {text: 'Hola amigo', completed: true },
+  {text: 'Como estas', completed: false },
+  {text: 'Este es', completed: true },
+  {text: 'Un test', completed: false },
+];
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hola mundo</h1>
+    <>
+
       <TaskCounter completed={5} total={10} />
       <TaskSearch />
 
       <TaskList>
-        <TaskItem />
+        {arrayTask.map(task => (
+          <TaskItem 
+            key={task.text}
+            text={task.text}
+            completed={task.completed} />
+        ))}
       </TaskList>
 
       <TaskButton />
-
-    </div>
+    </>
   );
 }
 
