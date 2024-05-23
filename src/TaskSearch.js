@@ -1,12 +1,10 @@
 import React from 'react';
 import './TaskSearch.css';
 
-function TaskSearch() {
-  const [searchValue, setSearchValue] = React.useState('');
-  console.log(searchValue);
+function TaskSearch({searchValue, setSearchValue}) {
 
   return (
-    <input className='TaskSearch' placeholder='Ingresa Tarea'
+    <input className='TaskSearch' placeholder='Ingresa tu nueva tarea'
       value={ searchValue }
       onChange={ (event)=> {
         setSearchValue(event.target.value);
