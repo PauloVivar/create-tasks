@@ -17,7 +17,6 @@ const arrayTask = [
 function App() {
   return (
     <>
-
       <TaskCounter completed={5} total={10} />
       <TaskSearch />
 
