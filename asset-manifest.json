@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/PauloVivar/create-tasks/static/css/main.0c762cec.css",
-    "main.js": "/PauloVivar/create-tasks/static/js/main.3a88de39.js",
-    "index.html": "/PauloVivar/create-tasks/index.html",
-    "main.0c762cec.css.map": "/PauloVivar/create-tasks/static/css/main.0c762cec.css.map",
-    "main.3a88de39.js.map": "/PauloVivar/create-tasks/static/js/main.3a88de39.js.map"
+    "main.css": "./static/css/main.0c762cec.css",
+    "main.js": "./static/js/main.3a88de39.js",
+    "index.html": "./index.html",
+    "main.0c762cec.css.map": "./static/css/main.0c762cec.css.map",
+    "main.3a88de39.js.map": "./static/js/main.3a88de39.js.map"
   },
   "entrypoints": [
     "static/css/main.0c762cec.css",
