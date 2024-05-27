@@ -10,6 +10,8 @@ import { TaskButton } from '../Components/TaskButton';
 import { TasksLoading } from '../Components/TasksLoading';
 import { TasksError } from '../Components/TasksError';
 import { TasksEmpty } from '../Components/TasksEmpty';
+import { Modal } from '../Components/Modal';
+import { TaskForm } from '../Components/TaskForm';
 
 function AppUI() {
 
@@ -18,17 +20,21 @@ function AppUI() {
     error,
     searchTasks,
     completeTask,
-    deleteTask
+    deleteTask,
+    openModal,
+    setOpenModal
   } = React.useContext(TaskContext);
 
   return (
     <>
       <TaskCounter />
       <TaskSearch />
+
       <TaskList>
+
         {loading && <TasksLoading />}
         {error && <TasksError />}
-        {(!loading && searchTasks.lenght === 0) && <TasksEmpty />}
+        {(!loading && searchTasks.length === 0) && <TasksEmpty />}
         
         {searchTasks.map(task => (
           <TaskItem 
@@ -39,8 +45,18 @@ function AppUI() {
             onDelete={ ()=> deleteTask(task.text) }
           />
         ))}
+
       </TaskList>
-      <TaskButton />
+
+      <TaskButton 
+        setOpenModal={setOpenModal}/>
+
+      {openModal && (
+        <Modal>
+          <TaskForm />
+        </Modal>
+      )}
+    
     </>
   );
 }

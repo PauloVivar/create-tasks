@@ -1,13 +1,11 @@
 import './TaskButton.css';
 
-function TaskButton() {
+function TaskButton({ setOpenModal }) {
   return (
     <button className='TaskButton'
       onClick={ 
-        (event)=> {
-          console.log('le diste un clik')
-          console.log(event)
-          console.log(event.target)
+        ()=> {
+          setOpenModal(state => !state);
         }
       }>
         +

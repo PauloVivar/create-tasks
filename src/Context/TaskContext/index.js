@@ -13,15 +13,20 @@ function TaskProvider({children}){
     error
   } = useLocalStorage('TASKS_V1', []);
 
+  //estado Search
   const [searchValue, setSearchValue] = React.useState('');
   //console.log(searchValue);
 
+  //estado Modal
+  const [openModal, setOpenModal] = React.useState(false);
+
+  //Validar cuantas tareas estan completadas
   const completedTasks = tasks.filter(
     task => !!task.completed
   ).length;
-
   const totalTasks = tasks.length;
 
+  //Buscar tarea
   const searchTasks = tasks.filter(
     (task) => {
       const taskText = task.text.toLowerCase();
@@ -30,7 +35,17 @@ function TaskProvider({children}){
     }
   );
 
-  //Función con la lógica para señalar tareas
+  //Función con la lógica para Agregar una nueva tareas
+  const addTask = (text) => {
+    const newTasks = [...tasks];
+    newTasks.push({
+      text,
+      completed: false,
+    });
+    saveTasks(newTasks);
+  }
+
+  //Función con la lógica para Señalar tareas existentes
   const completeTask = (text) => {
     const newTasks = [...tasks];
     const index = newTasks.findIndex(
@@ -40,7 +55,7 @@ function TaskProvider({children}){
     saveTasks(newTasks);
   }
 
-  //Funcón con la lógica para eliminar tareas
+  //Funcón con la lógica para eliminar tareas existentes
   const deleteTask = (text) => {
     const newTasks = [...tasks];
     const index = newTasks.findIndex(
@@ -59,8 +74,11 @@ function TaskProvider({children}){
       searchValue,
       setSearchValue,
       searchTasks,
+      addTask,
       completeTask,
-      deleteTask
+      deleteTask,
+      openModal,
+      setOpenModal
     }}>
       {children}
     </TaskContext.Provider>
