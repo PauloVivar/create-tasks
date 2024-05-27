@@ -11,7 +11,7 @@ function TaskSearch() {
   } = React.useContext(TaskContext);
 
   return (
-    <input className='TaskSearch' placeholder='Ingresa tu nueva tarea'
+    <input className='TaskSearch' placeholder='Busca una tarea'
       value={ searchValue }
       onChange={ (event)=> {
         setSearchValue(event.target.value);
