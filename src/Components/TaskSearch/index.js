@@ -1,7 +1,14 @@
 import React from 'react';
+import { TaskContext }from '../../Context/TaskContext';
+
 import './TaskSearch.css';
 
-function TaskSearch({searchValue, setSearchValue}) {
+function TaskSearch() {
+
+  const {
+    searchValue,
+    setSearchValue,
+  } = React.useContext(TaskContext);
 
   return (
     <input className='TaskSearch' placeholder='Ingresa tu nueva tarea'

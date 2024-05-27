@@ -1,32 +1,30 @@
 
 import React from 'react';
-import { TaskCounter } from '../TaskCounter';
-import { TaskSearch } from '../TaskSearch';
-import { TaskList } from '../TaskList';
-import { TaskItem } from '../TaskItem';
-import { TaskButton } from '../TaskButton';
-import { TasksLoading } from '../TasksLoading';
-import { TasksError } from '../TasksError';
-import { TasksEmpty } from '../TasksEmpty';
+import { TaskContext } from '../Context/TaskContext';
 
-function AppUI({
-  loading,
-  error,
-  completedTasks,
-  totalTasks,
-  searchValue,
-  setSearchValue,
-  searchTasks,
-  completeTask,
-  deleteTask
-}) {
+import { TaskCounter } from '../Components/TaskCounter';
+import { TaskSearch } from '../Components/TaskSearch';
+import { TaskList } from '../Components/TaskList';
+import { TaskItem } from '../Components/TaskItem';
+import { TaskButton } from '../Components/TaskButton';
+import { TasksLoading } from '../Components/TasksLoading';
+import { TasksError } from '../Components/TasksError';
+import { TasksEmpty } from '../Components/TasksEmpty';
+
+function AppUI() {
+
+  const {
+    loading,
+    error,
+    searchTasks,
+    completeTask,
+    deleteTask
+  } = React.useContext(TaskContext);
+
   return (
     <>
-      <TaskCounter completed={completedTasks} total={totalTasks} />
-      <TaskSearch 
-        searchValue={searchValue}
-        setSearchValue={setSearchValue} />
-
+      <TaskCounter />
+      <TaskSearch />
       <TaskList>
         {loading && <TasksLoading />}
         {error && <TasksError />}
@@ -42,7 +40,6 @@ function AppUI({
           />
         ))}
       </TaskList>
-
       <TaskButton />
     </>
   );

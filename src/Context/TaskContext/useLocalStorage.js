@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function useLocalStorage(itemName, initialValue){
 
@@ -24,7 +24,7 @@ function useLocalStorage(itemName, initialValue){
         setLoading(false);
         setError(true);
       }
-    }, 4000);
+    }, 2000);
   }, []);
   
   //Función para persistir los datos en localStorage
@@ -37,3 +37,14 @@ function useLocalStorage(itemName, initialValue){
 }
 
 export { useLocalStorage };
+
+// localStorage.removeItem('TASKS_V1');
+
+// const arrayTask = [
+//   {text: 'Hola amigo', completed: true },
+//   {text: 'Como estas', completed: false },
+//   {text: 'Este es', completed: true },
+//   {text: 'Un test', completed: false },
+//   {text: 'New', completed: true },
+// ];
+// localStorage.setItem('TASKS_V1', JSON.stringify(arrayTask));
