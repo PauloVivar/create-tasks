@@ -24,3 +24,6 @@ yarn-error.log*
 
 # vscode
 .vscode
+
+# Archivos de ambiente (¡claves secretas!)
+.env
