@@ -2,7 +2,7 @@
 
 ¡Hola!
 
-En este repositorio encontrarás el código de create task o todo list. Puedes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+En este repositorio encontrarás el código de mi create task o todo list. Puedes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
 
 ## Getting Started with Create React App
 

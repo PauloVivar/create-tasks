@@ -4,7 +4,7 @@ import { useLocalStorage } from './useLocalStorage';
 const TaskContext = React.createContext();
 
 function TaskProvider({children}){
-  //GlobarContext de Tareas donde guardamos toda la logica para todos nuestros componentes
+  //GlobarContext de Tareas donde guardamos toda la lógica para todos nuestros componentes
 
   const {
     item: tasks, 
@@ -55,7 +55,7 @@ function TaskProvider({children}){
     saveTasks(newTasks);
   }
 
-  //Funcón con la lógica para eliminar tareas existentes
+  //Función con la lógica para eliminar tareas existentes
   const deleteTask = (text) => {
     const newTasks = [...tasks];
     const index = newTasks.findIndex(
